@@ -17,11 +17,12 @@ zinit light zsh-users/zsh-syntax-highlighting
 zinit light zsh-users/zsh-completions
 zinit light zsh-users/zsh-autosuggestions
 zinit light Aloxaf/fzf-tab
+zinit snippet OMZ::plugins/git/git.plugin.zsh
 
 # Add in snippet
 zinit snippet OMZP::git
 zinit snippet OMZP::sudo
-zinit snippet OMZP::ubuntu
+zinit snippet OMZP::debian
 zinit snippet OMZP::command-not-found
 # Personal additions
 zinit snippet OMZP::virtualenv
@@ -43,13 +44,24 @@ autoload -U compinit && compinit
 
 zinit cdreplay -q
 
+#Load zsh-history-substring-search
+zinit load 'zsh-users/zsh-history-substring-search'
+zinit ice wait atload '_history_substring_search_config'
+
 # Source/Load oh-my-posh
-eval "$(oh-my-posh init zsh --config $HOME/.config/oh-my-posh/night-owl.omp.json)"
+eval "$(oh-my-posh init zsh --config $HOME/.config/oh-my-posh/nordcustom_v.2.omp.json)"
+# eval "$(oh-my-posh init zsh --config $HOME/.config/night-owl.omp.json)"
 
 # Keybindings
 bindkey -e
-bindkey '^p' history-search-backward
-bindkey '^n' history-search-forward
+#bindkey '^p' history-search-backward
+#bindkey '^n' history-search-forward
+bindkey '^p' history-substring-search-up
+bindkey '^n' history-substring-search-down
+#bindkey '^[[A' history-substring-search-up
+#bindkey '^[[B' history-substring-search-down
+#bindkey ''^[[1;5A' history-substring-search-up
+#bindkey ''^[[1;5B' history-substring-search-down
 
 # History
 HISTSIZE=5000
