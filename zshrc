@@ -49,8 +49,9 @@ zinit load 'zsh-users/zsh-history-substring-search'
 zinit ice wait atload '_history_substring_search_config'
 
 # Source/Load oh-my-posh
-eval "$(oh-my-posh init zsh --config $HOME/.config/oh-my-posh/nordcustom_v.2.omp.json)"
+# eval "$(oh-my-posh init zsh --config $HOME/.config/oh-my-posh/nordcustom_v.2.omp.json)"
 # eval "$(oh-my-posh init zsh --config $HOME/.config/night-owl.omp.json)"
+eval "$(oh-my-posh init zsh --config ~/dev-temp/omp-themes/attempt3.omp.json)"
 
 # Keybindings
 bindkey -e
